@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Healthcheck</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-heartbeat,.fa-thermometer {font-size:200px}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="hospital.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="http://127.0.0.1:5500/check.html" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="_blank" >Check</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Medicine</a>
+    <a href="nearhospital.html"  target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Hospital</a>
+    <a href="medicalstore.html" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Medical Store</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Medicine</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Hospital</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Medical Store</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-teal w3-center" style="padding:200px 16px">
+  <h1 class="w3-margin w3-jumbo">HEALTH CHECK</h1>
+ 
+<!--<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white w3-large">Login</button>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+      <img src="img_avatar2 (1).png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+    </div>
+
+    <form class="w3-container" >
+      <div class="w3-section ">
+     
+        
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Email" name="usrname" required>
+        
+      
+      
+        <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+        <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+   
+       
+    </form>
+
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+      <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-center w3-red">Cancel</button>
+      <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+    </div>
+
+  </div>
+</div>
+</div>
+          
+
+
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>ABOUT</h1>
+      
+
+      <p class="w3-text-grey">The Health Check project is a user-friendly platform that assists individuals in determining potential health issues based on their symptoms. The project takes in symptoms as inputs and outputs a possible disease diagnosis along with relevant medication information. Additionally, the platform provides the locations of nearby hospitals and links to medical stores for convenient access to medical services and supplies. With this project, users can receive quick and accurate health assessments, making it easier to take control of their health</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-heartbeat w3-padding-l w3-text-teal"></i>
+    </div>
+
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-thermometer w3-padding-large w3-text-teal w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>PROBLEM</h1>
+      <h5 class="w3-padding-32">The challenge of accurately diagnosing a disease based on symptoms often leads to individuals seeking multiple medical opinions,which not only incurs additional time and cost but also delays the start of the treatment process.To address this issue,we aim to develop a solution that can accurately match symptoms to diseases and provide recommendations for the best hospitals and treatments nearby,streamlining the diagnostic and treatment process for patients </h5>
+      <h1>SOLUTION</h1>
+      <p class="w3-text-grey">Our solution aims to address the problem of inaccurate disease diagnosis based on symptoms by utilizing a comprehensive database that incorporates patient information such as age, temperature, and symptoms. By analyzing this data, we can accurately match symptoms to diseases and provide the necessary medication, obtained through a thorough search of multiple credible websites. Our goal is to streamline the diagnostic process and ensure that patients receive the correct treatment quickly and efficiently.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+</html>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<title>Check</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<style> p {text-align: center;}</style>
+<body>
+    <header class="w3-container w3-teal w3-jumbo w3-center">
+       <p> <h1>Say about you</h1></p>
+
+      </header>
+      <div class="w3-container   ">
+<form onsubmit="myFunction(event)">
+    <br>
+<div class="w3-cylinder " >
+    <form class="w3-container w3-card-4 w3-center">
+       
+<p>
+
+<input class="w3-input w3-teal w3-content w3-center form-control" type="text" id="name"  placeholder="Name(s)" name="name"  style=" width:50%" required>
+<label>Name</label></p>
+
+    
+<p>
+<input class="w3-input w3-content w3-center w3-teal form-control" type="date" id="dob" placeholder="Age(years)" style="width:50%" required>
+<label>Date of birth</label></p>
+<p>
+<input class="w3-input w3-content w3-center w3-teal form-control" type="number" id="phone_no" placeholder="Number(+91)" style="width:50%" required>
+<label>Phone Number</label></p>
+<p>
+<input class="w3-input w3-teal w3-content w3-center form-control" type="number" id="weight" placeholder="Weight(kgs)" style="width:50%" required>
+<label>Body Weight</label></p>
+<p>
+<input class="w3-input w3-content w3-center w3-teal form-control" type="number" id="temp"  placeholder="Body Temperature(in F)" style="width:50%" required>
+<label>Body Temperature</label></p>
+<p>
+<input class="w3-input w3-content w3-center w3-teal form-control" type="number" id="pulse" placeholder="Pulse rate/min" style="width:50%" required>
+<label>Pulse Rate</label></p>
+<p>
+<input class="w3-input w3-content w3-center w3-teal form-control" type="number" id="bp" placeholder="Blood Pressure" style="width:50%" required>
+<label>Blood Pressure</label></p>
+<p>
+    <input class="w3-radio" type="radio" name="gender" id="male" value="male">
+    <label>Male</label></p>
+    
+    <p>
+    <input class="w3-radio" type="radio" name="gender" id="female" value="female">
+    <label>Female</label></p>
+
+
+<div class="w3-center">
+    <h3 style="color:teal;"><b>SELECT SYMPTOMS</b></h3>
+    <input type="checkbox" id="ele1" value="cold">
+    <label for="ele1">COLD</label>
+    <br>
+    <input type="checkbox" id="ele2" value="cough">
+    <label for="ele2">COUGH</label>
+    <br>
+    <input type="checkbox" id="ele3" value="bodypains">
+    <label for="ele3">BODY PAINS</label>
+    <br>
+    <input type="checkbox" id="ele4" value="stomachpain">
+    <label for="ele4">STOMACH PAIN</label>
+    <br>
+    <input type="checkbox" id="ele5" value="headache">
+    <label for="ele5">HEAD ACHE</label>
+    <br>
+    <input type="checkbox" id="ele6" value="wound">
+    <label for="ele6">WOUND</label>
+    <br>
+    <input type="checkbox" id="ele7" value="rashes">
+    <label for="ele7">RASHES</label>
+    <br>
+    <input type="checkbox" id="ele8" value="kneepain">
+    <label for="ele8">KNEE PAIN</label>
+    <br>
+    <input type="checkbox" id="ele9" value="vomitings">
+    <label for="ele9">VOMITINGS</label>
+    <br>
+    <input type="checkbox" id="ele10" value="ulsures">
+    <label for="ele10">ULSURES</label>
+    <br>
+    <input type="checkbox" id="ele11" value="bodyweight">
+    <label for="ele11">SUDDEN GAIN or LOSE IN BODY WEIGHT</label>
+     <br>
+    <button onclick="fun1()" class="w3-button w3-section w3-teal w3-center w3-ripple" id="submitBtn"> Submit </button> 
+</div>
+<div class="w3-container  w3-half  w3-center w3-teal" id="empContainer">
+
+
+</div>
+
+
+</form>
+</div>
+</form>
+
+
+</div>
+<script> type="text/javascript"
+    function myFunction(event) {
+        event.preventDefault();
+        let name = document.getElementById("name").value();
+        let dob = document.getElementById("dob").value();
+        let phone_no = document.getElementById("phone_no").value();
+        let weight = document.getElementById("weight").value();
+        let temp = document.getElementById("temp").value();
+        let pulse = document.getElementById("pulse").value();
+        let bp = document.getElementById("bp").value();
+        console.log(name);
+        localStorage.setItem('ls_name',name);
+        localStorage.setItem('ls_dob',dob);
+        localStorage.setItem('ls_phone_no',phone_no);
+        localStorage.setItem('ls_weight',weight);
+        localStorage.setItem('ls_temp',temp);
+        localStorage.setItem('ls_pulse',pulse);
+        localStorage.setItem('ls_bp',bp);
+    }
+
+    let coldEle=document.getElementById("ele1");
+    let coughEle=document.getElementById("ele2");
+    let bpEle=document.getElementById("ele3");
+    let spEle=document.getElementById("ele4");
+    let haEle=document.getElementById("ele5");
+    let woundEle=document.getElementById("ele6");
+    let rashesEle=document.getElementById("ele7");
+    let kpEle=document.getElementById("ele8");
+    let vomEle=document.getElementById("ele9");
+
+
+
+    let emptyContainer=document.getElementById("empContainer");
+    let btn=document.getElementById("submitBtn");
+
+    function fun1(){
+        emptyContainer.textContent="";
+       // emptyContainer.style.align("center")
+        if (coldEle.checked===true && coughEle.checked===true && bpEle.checked==false  )
+        {
+            let headEle=document.createElement("h3","center");
+            headEle.textContent="FEVER";
+
+            emptyContainer.appendChild(headEle);
+        }
+        else if(bpEle.checked==true && coughEle.checked===false)
+        {
+            let headEle=document.createElement("h3","center");
+            headEle.textContent="You are just weak take rest and take proper food";
+
+            emptyContainer.appendChild(headEle);
+        }
+        else if(bpEle.checked==true && coldEle.checked===true && coughEle.checked===true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="You have viral fever consern near by doctor";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(bpEle.checked==true && coldEle.checked===true && coughEle.checked===true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="You have viral fever consern near by doctor";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(spEle.checked==true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="check the food u have taken u might have digestion issue";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(haEle.checked==true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="This actually requires past records also such as migrane just stress less ";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(woundEle.checked==true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="There will be different kinds of wounds if it is something like blood clot take first aid";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(rashesEle.checked==true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="rashes occurs due to non cleanliness ";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(kpEle.checked==true)
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="knee pain occurs dues to lack of neutritious food";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(vomEle.checked==true && spEle.checked==true )
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="There might be many problems mainly this might occur dues to lack of digestion  ";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+        else if(vomEle.checked==true && spEle.checked==false )
+        {
+            let headEle=document.createElement("h3");
+            headEle.style.textAlign = "center";
+         
+            headEle.textContent="Tlack of digestion ";
+
+            emptyContainer.appendChild(headEle);
+            
+        }
+    
+
+    }
+    
+    </script>
+    
+
+</body>
+</html> 
